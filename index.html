@@ -1,0 +1,1048 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COMPANY</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #1a3c6e;
+      --accent: #e8a020;
+      --dark: #0d1f3c;
+      --light-bg: #f5f7fc;
+      --text-muted-custom: #6c7a92;
+    }
+
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 14px 0;
+      transition: all 0.3s;
+      z-index: 1050;
+    }
+    .navbar.scrolled {
+      padding: 8px 0;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--primary) !important;
+      letter-spacing: 1px;
+    }
+    .navbar-brand span { color: var(--accent); }
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #444 !important;
+      letter-spacing: 0.5px;
+      padding: 6px 14px !important;
+      transition: color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
+    .dropdown-menu { border: none; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-radius: 10px; }
+    .dropdown-item { font-size: 0.85rem; padding: 8px 20px; }
+    .dropdown-item:hover { background: var(--light-bg); color: var(--primary); }
+
+    /* ── Hero ── */
+   html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+/* Fixed Navbar */
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    padding: 14px 0;
+    transition: all 0.3s;
+    z-index: 1050;
+}
+
+/* Hero Section */
+#hero {
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(
+        135deg,
+        var(--dark) 0%,
+        var(--primary) 60%,
+        #2260b0 100%
+    );
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 40px;
+}
+
+/* Fix Hero Circle */
+#hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+    top: -200px;
+    right: -150px;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(232,160,32,0.08);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -100px;
+}
+
+/* Anchor Offset Fix */
+#hero,
+#about,
+#services,
+#portfolio,
+#contact,
+#counters {
+    scroll-margin-top: 90px;
+}
+
+/* Mobile Fix */
+@media (max-width: 991px) {
+
+    body {
+        padding-top: 70px;
+    }
+
+    #hero {
+        min-height: auto;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        text-align: center;
+    }
+
+    #hero p {
+        margin: 0 auto 1.5rem;
+    }
+
+    .hero-visual {
+        margin-top: 3rem;
+    }
+
+    .about-badge {
+        left: 10px;
+    }
+
+    .navbar-collapse {
+        background: white;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-stat {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+}
+    #hero h1 span { color: var(--accent); }
+    #hero p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 520px;
+    }
+    .btn-hero-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 13px 34px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s;
+    }
+    .btn-hero-primary:hover { background: #c8891a; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232,160,32,0.4); }
+    .btn-hero-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.4);
+      padding: 13px 34px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .btn-hero-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+    .hero-stat {
+      text-align: center;
+      padding: 20px;
+      border-left: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-stat:first-child { border-left: none; }
+    .hero-stat .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .hero-stat .label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hero-visual {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+    }
+    .hero-icon-box {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 1.2rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .hero-icon-box:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+    .hero-icon-box i { font-size: 2rem; color: var(--accent); }
+    .hero-icon-box p { color: rgba(255,255,255,0.8); font-size: 0.78rem; margin: 0; margin-top: 8px; }
+
+    /* ── Section Titles ── */
+    .section-subtitle {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .section-divider {
+      width: 50px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 1rem 0 1.5rem;
+    }
+
+    /* ── About ── */
+    #about { padding: 100px 0; background: #fff; }
+    .about-img-wrapper {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .about-img-wrapper img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 20px 20px 60px rgba(26,60,110,0.15);
+    }
+    .about-badge {
+      position: absolute;
+      bottom: 25px; left: -20px;
+      background: var(--primary);
+      color: #fff;
+      padding: 15px 22px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(26,60,110,0.3);
+      font-size: 0.82rem;
+    }
+    .about-badge strong { display: block; font-size: 1.5rem; color: var(--accent); }
+
+    /* ── Services ── */
+    #services { padding: 100px 0; background: var(--light-bg); }
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      height: 100%;
+      border: 1px solid #eef0f8;
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transition: transform 0.35s;
+    }
+    .service-card:hover { box-shadow: 0 20px 50px rgba(26,60,110,0.1); transform: translateY(-6px); border-color: transparent; }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 58px; height: 58px;
+      border-radius: 14px;
+      background: var(--light-bg);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem;
+      transition: all 0.3s;
+    }
+    .service-card:hover .service-icon { background: var(--primary); }
+    .service-icon i { font-size: 1.5rem; color: var(--primary); transition: color 0.3s; }
+    .service-card:hover .service-icon i { color: #fff; }
+    .service-card h5 { font-size: 1.05rem; font-weight: 600; color: var(--dark); margin-bottom: 0.6rem; }
+    .service-card p { font-size: 0.87rem; color: var(--text-muted-custom); line-height: 1.75; margin: 0; }
+
+    /* ── Portfolio ── */
+    #portfolio { padding: 100px 0; background: #fff; }
+    .portfolio-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s;
+    }
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,31,60,0.95), rgba(26,60,110,0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.4rem;
+    }
+    .portfolio-item:hover img { transform: scale(1.07); }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-overlay h6 { color: #fff; font-weight: 600; margin: 0; font-size: 0.95rem; }
+    .portfolio-overlay span { color: var(--accent); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; }
+    .portfolio-overlay .overlay-icon {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      width: 36px; height: 36px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+    }
+
+    /* ── Counter Section ── */
+    #counters {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+    }
+    .counter-card { text-align: center; padding: 1rem; }
+    .counter-card .count { font-size: 3rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .counter-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ── Contact ── */
+    #contact { padding: 100px 0; background: var(--light-bg); }
+    .contact-info-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .contact-icon {
+      width: 50px; height: 50px; min-width: 50px;
+      border-radius: 12px;
+      background: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-icon i { font-size: 1.3rem; color: #fff; }
+    .contact-info-card h6 { font-weight: 600; color: var(--dark); margin-bottom: 3px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    .contact-info-card p { margin: 0; color: var(--text-muted-custom); font-size: 0.9rem; line-height: 1.6; }
+    .contact-form-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+    }
+    .form-control {
+      border: 1.5px solid #e5e9f2;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,60,110,0.1); }
+    .btn-send {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 13px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .btn-send:hover { background: var(--dark); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,60,110,0.35); }
+    .map-wrapper { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 25px rgba(0,0,0,0.08); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 0 30px;
+    }
+    footer .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+    }
+    footer .brand span { color: var(--accent); }
+    footer h6 { color: #fff; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.82rem; margin-bottom: 1rem; }
+    footer a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; display: block; margin-bottom: 8px; }
+    footer a:hover { color: var(--accent); }
+    .social-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7) !important;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      margin-right: 8px;
+    }
+    .social-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff !important; transform: translateY(-3px); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+      padding-top: 24px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .back-to-top {
+      width: 44px; height: 44px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+    .back-to-top:hover { background: #c8891a; transform: translateY(-3px); }
+
+    /* ── Animations ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 991px) {
+      #hero { padding: 120px 0 60px; text-align: center; }
+      #hero p { margin: 0 auto 1.5rem; }
+      .hero-visual { margin-top: 3rem; }
+      .about-badge { left: 10px; }
+    }
+    @media (max-width: 575px) {
+      .hero-stat { border-left: none; border-top: 1px solid rgba(255,255,255,0.12); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#hero">COMPANY<span>Name</span></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#services" role="button" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#services">Web Development</a></li>
+            <li><a class="dropdown-item" href="#services">Mobile App Development</a></li>
+            <li><a class="dropdown-item" href="#services">ERP Development</a></li>
+            <li><a class="dropdown-item" href="#services">Design UI &amp; UX</a></li>
+            <li><a class="dropdown-item" href="#services">CRM Development</a></li>
+            <li><a class="dropdown-item" href="#services">Digital Marketing</a></li>
+            <li><a class="dropdown-item" href="#services">Finance Domain</a></li>
+            <li><a class="dropdown-item" href="#services">Bank Application Domain</a></li>
+            <li><a class="dropdown-item" href="#services">Health Care Domain</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-sm px-4 py-2 rounded-pill fw-600" href="#contact"
+             style="background:var(--primary);color:#fff;font-size:0.85rem;font-weight:600;">Get Started</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+  <div class="container position-relative" style="z-index:2">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <div class="hero-tag"><i class="bi bi-stars me-1"></i> Web &amp; App Development Agency</div>
+        <h1><span>Welcome to COMPANY Analytics</span></h1>
+        <p class="mb-4">Our success is a result of teamwork and building upon our technical expertise and creative style, providing a full-service solution to our clients.</p>
+        <div class="d-flex flex-wrap gap-3 mb-5">
+          <a href="#about" class="btn-hero-primary text-decoration-none">Explore More</a>
+          <a href="#portfolio" class="btn-hero-outline text-decoration-none">View Portfolio</a>
+        </div>
+        <div class="row gx-0">
+          <div class="col-4 hero-stat">
+            <div class="number">150+</div>
+            <div class="label">Projects Done</div>
+          </div>
+          <div class="col-4 hero-stat">
+            <div class="number">80+</div>
+            <div class="label">Happy Clients</div>
+          </div>
+          <div class="col-4 hero-stat">
+            <div class="number">10+</div>
+            <div class="label">Years Exp.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="hero-icon-box">
+                <i class="bi bi-globe2"></i>
+                <p>Web Development</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero-icon-box">
+                <i class="bi bi-phone"></i>
+                <p>Mobile Apps</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero-icon-box">
+                <i class="bi bi-bar-chart-line"></i>
+                <p>ERP &amp; CRM</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero-icon-box">
+                <i class="bi bi-palette"></i>
+                <p>UI &amp; UX Design</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero-icon-box">
+                <i class="bi bi-graph-up-arrow"></i>
+                <p>Digital Marketing</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero-icon-box">
+                <i class="bi bi-bank2"></i>
+                <p>Finance Domain</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5 fade-up">
+        <div class="about-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop" alt="About Ayaskanta team" loading="lazy" />
+          <div class="about-badge">
+            <strong>10+</strong> Years of Excellence
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 ps-lg-5 fade-up">
+        <span class="section-subtitle">About Us</span>
+        <h2 class="section-title">Welcome To Our World Of High End Web / App Design &amp; Development</h2>
+        <div class="section-divider"></div>
+        <p class="text-muted mb-3" style="line-height:1.9">We've always known that, despite our codes doing all the heavy lifting behind the scenes, it takes a human touch to really drive home success. After all, glitches happen. Discover why we support success the way we do.</p>
+        <p class="text-muted mb-4" style="line-height:1.9"><strong>COMPANY Pvt. Ltd.</strong> is a web/app development agency focused on challenging the boundaries of user-centered design by creating bespoke mobility solutions. Be it mobile or web, we have a dedicated team for all the latest technology platforms.</p>
+        <div class="row g-3 mb-4">
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-warning"></i>
+              <span style="font-size:0.9rem">Expert Development Team</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-warning"></i>
+              <span style="font-size:0.9rem">Cross-Platform Solutions</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-warning"></i>
+              <span style="font-size:0.9rem">User-Centered Design</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-warning"></i>
+              <span style="font-size:0.9rem">Full-Service Agency</span>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-send text-decoration-none px-4 py-3">Contact Us <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SERVICES ══════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-subtitle">Our Services</span>
+      <h2 class="section-title">What We Do Offer</h2>
+      <div class="section-divider mx-auto"></div>
+      <p class="text-muted mx-auto" style="max-width:540px;font-size:0.95rem">We provide comprehensive digital solutions to power your business growth and digital transformation.</p>
+    </div>
+    <div class="row g-4">
+      <!-- Web Dev -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-globe2"></i></div>
+          <h5>Web Development</h5>
+          <p>We integrate front-end, back-end and architecture ability, through progressive web apps, to maximise delivery speed and fulfil business needs with seamless multi-platform experiences.</p>
+        </div>
+      </div>
+      <!-- Mobile -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-phone"></i></div>
+          <h5>Mobile App Development</h5>
+          <p>Android, iOS and native apps with multi-platform compatibility and appealing UI/UX. We identify the best choice for your project and adapt fast to create impactful apps.</p>
+        </div>
+      </div>
+      <!-- ERP -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-diagram-3"></i></div>
+          <h5>ERP Development</h5>
+          <p>ERP software handles the management of main business processes in real-time — collecting, storing, managing and interpreting information from various business activities.</p>
+        </div>
+      </div>
+      <!-- UI/UX -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-palette2"></i></div>
+          <h5>Design UI &amp; UX</h5>
+          <p>We create intuitive, beautiful interfaces that delight users and drive engagement. Our design process blends aesthetics with functionality for maximum impact.</p>
+        </div>
+      </div>
+      <!-- CRM -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-people"></i></div>
+          <h5>CRM Development</h5>
+          <p>CRM helps businesses improve existing customer relationships and acquire new customers faster. We build systems that bring real benefits to your business operations.</p>
+        </div>
+      </div>
+      <!-- Digital Marketing -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <h5>Digital Marketing</h5>
+          <p>From SEO to social media strategy, we help your brand grow its online presence, reach targeted audiences and convert traffic into real business results.</p>
+        </div>
+      </div>
+      <!-- Finance -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-currency-rupee"></i></div>
+          <h5>Finance Domain</h5>
+          <p>Specialised expertise in financial services software. We cover both the function of finance common to all enterprises and dedicated financial institution platforms.</p>
+        </div>
+      </div>
+      <!-- Bank -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-bank2"></i></div>
+          <h5>Bank Application Domain</h5>
+          <p>Computerised banking software — covering core banking systems, maintenance, enhancements, and the specialised skills required to work within the banking domain.</p>
+        </div>
+      </div>
+      <!-- Healthcare -->
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-heart-pulse"></i></div>
+          <h5>Health Care Domain</h5>
+          <p>Robust healthcare software solutions that improve patient care, streamline clinical workflows, and ensure compliance with medical data standards and regulations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ COUNTERS ══════════════ -->
+<section id="counters">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3 fade-up">
+        <div class="counter-card">
+          <div class="count" data-target="150">0</div>
+          <p>Projects Completed</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up">
+        <div class="counter-card">
+          <div class="count" data-target="80">0</div>
+          <p>Happy Clients</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up">
+        <div class="counter-card">
+          <div class="count" data-target="10">0</div>
+          <p>Years Experience</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 fade-up">
+        <div class="counter-card">
+          <div class="count" data-target="25">0</div>
+          <p>Team Members</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PORTFOLIO ══════════════ -->
+<section id="portfolio">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-subtitle">Portfolio</span>
+      <h2 class="section-title">What We've Done</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&auto=format&fit=crop" alt="Web Development" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>Web</span>
+            <h6>Web Development</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&auto=format&fit=crop" alt="Mobile App" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>Mobile</span>
+            <h6>Mobile App</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&auto=format&fit=crop" alt="ERP CRM Software" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>Software</span>
+            <h6>ERP &amp; CRM Software</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600&auto=format&fit=crop" alt="Web Design" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>Design</span>
+            <h6>Web Design</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop" alt="Financial Software" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>Finance</span>
+            <h6>Financial Software</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&auto=format&fit=crop" alt="Machine Learning IoT" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>AI &amp; IoT</span>
+            <h6>Machine Learning &amp; IoT App</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop" alt="Digital Marketing" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>Marketing</span>
+            <h6>Digital Marketing Services</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&auto=format&fit=crop" alt="CRM Software" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>CRM</span>
+            <h6>CRM Software</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-up">
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop" alt="Healthcare" loading="lazy" />
+          <div class="portfolio-overlay">
+            <div class="overlay-icon"><i class="bi bi-link-45deg"></i></div>
+            <span>Healthcare</span>
+            <h6>Healthcare Domain</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-subtitle">Get In Touch</span>
+      <h2 class="section-title">Contact Us</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5 fade-up">
+        <div class="contact-info-card">
+          <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div>
+            <h6>Our Location</h6>
+            <p>Office No. 301, 3rd Floor, Krishnai Plaza, Canal Road, KarveNagar, Pune, Maharashtra - 411052</p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+          <div>
+            <h6>Email Address</h6>
+            <p><a href="mailto:info@company.com" style="color:var(--primary);text-decoration:none">info@company.com</a></p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div>
+            <h6>Phone Number</h6>
+            <p><a href="tel:+918805334452" style="color:var(--primary);text-decoration:none">+91 88053 34452</a></p>
+          </div>
+        </div>
+        <div class="map-wrapper mt-3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d472.9884563107419!2d73.81378829999998!3d18.487841841071308!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xaa6d7f480758fc9b!2sAyaskanta!5e0!3m2!1sen!2sin!4v1646195768014!5m2!1sen!2sin"
+            width="100%" height="230" style="border:0;display:block" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Ayaskanta Location"></iframe>
+        </div>
+      </div>
+      <div class="col-lg-7 fade-up">
+        <div class="contact-form-card">
+          <h4 class="mb-4" style="font-family:'Playfair Display',serif;color:var(--dark)">Send Us a Message</h4>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <input type="text" class="form-control" placeholder="Your Name" />
+            </div>
+            <div class="col-sm-6">
+              <input type="email" class="form-control" placeholder="Your Email" />
+            </div>
+            <div class="col-12">
+              <input type="text" class="form-control" placeholder="Subject" />
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" rows="6" placeholder="Your Message"></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn-send w-100 py-3">
+                <i class="bi bi-send me-2"></i> Send Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="brand mb-3">COMPANY<span>NAME</span></div>
+        <p style="font-size:0.88rem;line-height:1.8;max-width:320px">A web/app development agency focused on challenging the boundaries of user-centered design by creating bespoke mobility solutions.</p>
+        <div class="mt-3">
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2 offset-lg-1">
+        <h6>Quick Links</h6>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h6>Services</h6>
+        <a href="#services">Web Development</a>
+        <a href="#services">Mobile App Development</a>
+        <a href="#services">ERP Development</a>
+        <a href="#services">CRM Development</a>
+        <a href="#services">Digital Marketing</a>
+        <a href="#services">UI &amp; UX Design</a>
+      </div>
+      <div class="col-lg-2">
+        <h6>Contact</h6>
+        <p style="font-size:0.85rem;line-height:1.7">Krishnai Plaza, KarveNagar, Pune 411052</p>
+        <p style="font-size:0.85rem">+91 88053 34452</p>
+        <p style="font-size:0.85rem">info@campany.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <p class="mb-0">&copy; 2025 <strong style="color:rgba(255,255,255,0.7)">campany</strong>. All Rights Reserved.</p>
+      <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+        <i class="bi bi-chevron-up"></i>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Intersection Observer for fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Counter animation
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = +el.dataset.target;
+        let current = 0;
+        const step = target / 60;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) { el.textContent = target + '+'; clearInterval(timer); }
+          else { el.textContent = Math.floor(current) + '+'; }
+        }, 25);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.count').forEach(el => counterObserver.observe(el));
+
+  // Smooth active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
