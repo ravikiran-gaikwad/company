@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,140 +64,121 @@
     .dropdown-item:hover { background: var(--light-bg); color: var(--primary); }
 
     /* ── Hero ── */
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+   html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      overflow-x: hidden;
-      padding-top: 80px;
-    }
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
 
-    /* Fixed Navbar */
-    .navbar {
-      background: #fff;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-      padding: 14px 0;
-      transition: all 0.3s;
-      z-index: 1050;
-    }
+/* Fixed Navbar */
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    padding: 14px 0;
+    transition: all 0.3s;
+    z-index: 1050;
+}
 
-    /* Hero Section */
-    #hero {
-      min-height: calc(100vh - 80px);
-      background: linear-gradient(
+/* Hero Section */
+#hero {
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(
         135deg,
         var(--dark) 0%,
         var(--primary) 60%,
         #2260b0 100%
-      );
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: 40px;
-    }
+    );
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 40px;
+}
 
-    /* Particle Canvas */
-    #hero-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: auto;
-    }
+/* Fix Hero Circle */
+#hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+    top: -200px;
+    right: -150px;
+}
 
-    /* Hero Content above canvas */
-    #hero .container {
-      position: relative;
-      z-index: 2;
-    }
+#hero::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(232,160,32,0.08);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -100px;
+}
 
-    /* Fix Hero Circle */
-    #hero::before {
-      content: '';
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 50%;
-      top: -200px;
-      right: -150px;
-      z-index: 0;
-    }
+/* Anchor Offset Fix */
+#hero,
+#about,
+#services,
+#portfolio,
+#contact,
+#counters {
+    scroll-margin-top: 90px;
+}
 
-    #hero::after {
-      content: '';
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: rgba(232,160,32,0.08);
-      border-radius: 50%;
-      bottom: -100px;
-      left: -100px;
-      z-index: 0;
-    }
+/* Mobile Fix */
+@media (max-width: 991px) {
 
-    /* Anchor Offset Fix */
-    #hero,
-    #about,
-    #services,
-    #portfolio,
-    #contact,
-    #counters {
-      scroll-margin-top: 90px;
-    }
-
-    /* Mobile Fix */
-    @media (max-width: 991px) {
-      body {
+    body {
         padding-top: 70px;
-      }
+    }
 
-      #hero {
+    #hero {
         min-height: auto;
         padding-top: 60px;
         padding-bottom: 60px;
         text-align: center;
-      }
+    }
 
-      #hero p {
+    #hero p {
         margin: 0 auto 1.5rem;
-      }
+    }
 
-      .hero-visual {
+    .hero-visual {
         margin-top: 3rem;
-      }
+    }
 
-      .about-badge {
+    .about-badge {
         left: 10px;
-      }
+    }
 
-      .navbar-collapse {
+    .navbar-collapse {
         background: white;
         padding: 15px;
         margin-top: 10px;
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0,0,0,.1);
-      }
     }
+}
 
-    @media (max-width: 575px) {
-      .hero-stat {
+@media (max-width: 575px) {
+    .hero-stat {
         border-left: none;
         border-top: 1px solid rgba(255,255,255,0.12);
-      }
-
-      #hero h1 {
-        font-size: 2rem;
-      }
     }
 
+    #hero h1 {
+        font-size: 2rem;
+    }
+}
     #hero h1 span { color: var(--accent); }
     #hero p {
       color: rgba(255,255,255,0.75);
@@ -265,7 +248,7 @@
     .hero-icon-box p { color: rgba(255,255,255,0.8); font-size: 0.78rem; margin: 0; margin-top: 8px; }
 
     .hero-tag {
-      color: var(--accent);
+  color: var(--accent);
     }
     /* ── Section Titles ── */
     .section-subtitle {
@@ -513,13 +496,16 @@
       .hero-stat { border-left: none; border-top: 1px solid rgba(255,255,255,0.12); }
     }
   </style>
+<base target="_blank">
 </head>
 <body>
 
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand" href="#hero">COMPANY<span>Name</span></a>
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+  <img src="images/logo.png" alt="Company Logo" style="height:36px;width:auto;border-radius:6px;">
+</a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -541,7 +527,6 @@
             <li><a class="dropdown-item" href="#services">Health Care Domain</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="placement-calls-in-pune.html">Placement-Calls</a></li>
         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         <li class="nav-item ms-lg-2">
@@ -555,9 +540,6 @@
 
 <!-- ══════════════ HERO ══════════════ -->
 <section id="hero">
-  <!-- Particle Network Canvas -->
-  <canvas id="hero-canvas"></canvas>
-
   <div class="container position-relative" style="z-index:2">
     <div class="row align-items-center gy-5">
       <div class="col-lg-6">
@@ -971,7 +953,10 @@
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-4">
-        <div class="brand mb-3">COMPANY<span>NAME</span></div>
+        <div class="brand mb-3 d-flex align-items-center gap-2">
+  <img src="images/logo.png" alt="Company Logo" style="height:32px;width:auto;border-radius:6px;filter:brightness(0) invert(1);">
+ 
+</div>
         <p style="font-size:0.88rem;line-height:1.8;max-width:320px">A web/app development agency focused on challenging the boundaries of user-centered design by creating bespoke mobility solutions.</p>
         <div class="mt-3">
           <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
@@ -1018,164 +1003,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  // ══════════════ PARTICLE NETWORK SYSTEM ══════════════
-  (function() {
-    const canvas = document.getElementById('hero-canvas');
-    const ctx = canvas.getContext('2d');
-    
-    let width, height;
-    let particles = [];
-    let mouse = { x: null, y: null, radius: 180 };
-    
-    // Configuration
-    const config = {
-      particleCount: 70,
-      connectionDistance: 140,
-      mouseConnectionDistance: 200,
-      particleSpeed: 0.6,
-      particleSize: 2,
-      lineColor: '255, 255, 255',
-      particleColor: '255, 255, 255'
-    };
-    
-    // Resize canvas
-    function resize() {
-      const hero = document.getElementById('hero');
-      width = hero.offsetWidth;
-      height = hero.offsetHeight;
-      canvas.width = width;
-      canvas.height = height;
-    }
-    
-    // Create particle
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * config.particleSpeed;
-        this.vy = (Math.random() - 0.5) * config.particleSpeed;
-        this.size = Math.random() * config.particleSize + 1;
-      }
-      
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        
-        // Bounce off edges
-        if (this.x < 0 || this.x > width) this.vx *= -1;
-        if (this.y < 0 || this.y > height) this.vy *= -1;
-        
-        // Keep within bounds
-        this.x = Math.max(0, Math.min(width, this.x));
-        this.y = Math.max(0, Math.min(height, this.y));
-      }
-      
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${config.particleColor}, 0.6)`;
-        ctx.fill();
-      }
-    }
-    
-    // Initialize particles
-    function initParticles() {
-      particles = [];
-      for (let i = 0; i < config.particleCount; i++) {
-        particles.push(new Particle());
-      }
-    }
-    
-    // Draw line between two points with opacity based on distance
-    function drawLine(p1, p2, maxDist) {
-      const dx = p1.x - p2.x;
-      const dy = p1.y - p2.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      
-      if (dist < maxDist) {
-        const opacity = 1 - (dist / maxDist);
-        ctx.beginPath();
-        ctx.strokeStyle = `rgba(${config.lineColor}, ${opacity * 0.25})`;
-        ctx.lineWidth = 1;
-        ctx.moveTo(p1.x, p1.y);
-        ctx.lineTo(p2.x, p2.y);
-        ctx.stroke();
-      }
-    }
-    
-    // Animation loop
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      
-      // Update and draw particles
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      
-      // Connect particles to each other
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          drawLine(particles[i], particles[j], config.connectionDistance);
-        }
-      }
-      
-      // Connect particles to mouse
-      if (mouse.x !== null && mouse.y !== null) {
-        particles.forEach(p => {
-          drawLine(p, mouse, config.mouseConnectionDistance);
-        });
-        
-        // Draw mouse glow
-        ctx.beginPath();
-        ctx.arc(mouse.x, mouse.y, 4, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${config.particleColor}, 0.8)`;
-        ctx.fill();
-      }
-      
-      requestAnimationFrame(animate);
-    }
-    
-    // Mouse tracking
-    canvas.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    });
-    
-    canvas.addEventListener('mouseleave', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-    
-    // Touch support
-    canvas.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-      const rect = canvas.getBoundingClientRect();
-      const touch = e.touches[0];
-      mouse.x = touch.clientX - rect.left;
-      mouse.y = touch.clientY - rect.top;
-    }, { passive: false });
-    
-    canvas.addEventListener('touchend', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-    
-    // Handle resize
-    window.addEventListener('resize', () => {
-      resize();
-      initParticles();
-    });
-    
-    // Start
-    resize();
-    initParticles();
-    animate();
-  })();
-  
-  // ══════════════ EXISTING SCRIPTS ══════════════
-  
   // Navbar scroll effect
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('mainNav');
