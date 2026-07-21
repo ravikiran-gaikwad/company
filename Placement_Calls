@@ -1,0 +1,1271 @@
+
+html_content = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Calls - IT Recruitment | COMPANY</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #1a3c6e;
+      --accent: #e8a020;
+      --dark: #0d1f3c;
+      --light-bg: #f5f7fc;
+      --text-muted-custom: #6c7a92;
+      --success: #25d366;
+      --success-dark: #128c7e;
+      --whatsapp: #25d366;
+    }
+
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+      padding-top: 80px;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 14px 0;
+      transition: all 0.3s;
+      z-index: 1050;
+    }
+    .navbar.scrolled {
+      padding: 8px 0;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--primary) !important;
+      letter-spacing: 1px;
+    }
+    .navbar-brand span { color: var(--accent); }
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #444 !important;
+      letter-spacing: 0.5px;
+      padding: 6px 14px !important;
+      transition: color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
+    .dropdown-menu { border: none; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-radius: 10px; }
+    .dropdown-item { font-size: 0.85rem; padding: 8px 20px; }
+    .dropdown-item:hover { background: var(--light-bg); color: var(--primary); }
+
+    /* ── Page Header ── */
+    .page-header {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 60%, #2260b0 100%);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+      top: -150px;
+      right: -100px;
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(232,160,32,0.08);
+      border-radius: 50%;
+      bottom: -80px;
+      left: -80px;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      position: relative;
+      z-index: 2;
+    }
+    .page-header p {
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+    .breadcrumb-nav {
+      position: relative;
+      z-index: 2;
+    }
+    .breadcrumb-nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .breadcrumb-nav a:hover { color: var(--accent); }
+    .breadcrumb-nav span { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+
+    /* ── WhatsApp CTA Banner ── */
+    .whatsapp-banner {
+      background: linear-gradient(135deg, #075e54, #128c7e);
+      padding: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .whatsapp-banner::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      top: -100px;
+      right: -50px;
+    }
+    .whatsapp-banner h3 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .whatsapp-banner p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .btn-whatsapp:hover {
+      background: #128c7e;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+    }
+    .btn-whatsapp i { font-size: 1.4rem; }
+    .whatsapp-number {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.5rem;
+    }
+
+    /* ── Section Titles ── */
+    .section-subtitle {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .section-divider {
+      width: 50px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 1rem 0 1.5rem;
+    }
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+    .filter-bar .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .filter-bar label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+    .filter-bar .form-select, .filter-bar .form-control {
+      border: 1.5px solid #e5e9f2;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      min-width: 180px;
+    }
+    .filter-bar .form-select:focus, .filter-bar .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(26,60,110,0.1);
+    }
+    .btn-filter {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .btn-filter:hover { background: var(--dark); }
+    .btn-reset {
+      background: transparent;
+      color: var(--text-muted-custom);
+      border: 1.5px solid #e5e9f2;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .btn-reset:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* ── Call Cards ── */
+    .call-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 0;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+      border: 1px solid #eef0f8;
+      transition: all 0.35s;
+      overflow: hidden;
+      height: 100%;
+    }
+    .call-card:hover {
+      box-shadow: 0 20px 50px rgba(26,60,110,0.1);
+      transform: translateY(-6px);
+      border-color: transparent;
+    }
+    .call-card .card-header {
+      background: linear-gradient(135deg, var(--primary), var(--dark));
+      padding: 1.2rem 1.5rem;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .call-card .card-header h5 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    .call-card .card-header .company-badge {
+      background: rgba(255,255,255,0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .call-card .card-body {
+      padding: 1.5rem;
+    }
+    .call-card .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.87rem;
+      color: var(--text-muted-custom);
+    }
+    .call-card .detail-row i {
+      color: var(--primary);
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
+    }
+    .call-card .detail-row strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+    .call-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 1rem 0;
+    }
+    .call-card .tag {
+      background: var(--light-bg);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .call-card .card-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #eef0f8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .call-card .status-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .status-open { background: #e8f5e9; color: #28a745; }
+    .status-closed { background: #f8d7da; color: #dc3545; }
+    .status-upcoming { background: #fff3cd; color: #856404; }
+    .btn-apply {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .btn-apply:hover { background: #c8891a; color: #fff; transform: translateY(-2px); }
+    .btn-apply:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ── Premium Badge ── */
+    .premium-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      z-index: 10;
+      box-shadow: 0 4px 15px rgba(255,170,0,0.3);
+    }
+    .call-card-wrapper {
+      position: relative;
+    }
+
+    /* ── Upcoming Drives ── */
+    #upcoming { padding: 80px 0; background: var(--light-bg); }
+    .drive-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+      border: 1px solid #eef0f8;
+      transition: all 0.35s;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .drive-card:hover {
+      box-shadow: 0 15px 40px rgba(26,60,110,0.08);
+      transform: translateY(-4px);
+    }
+    .drive-date {
+      min-width: 70px;
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 12px;
+      padding: 0.8rem 0.5rem;
+    }
+    .drive-date .day {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+    }
+    .drive-date .month {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .drive-info h5 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 0.3rem;
+    }
+    .drive-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted-custom);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .drive-info .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted-custom);
+    }
+    .drive-info .meta i { color: var(--accent); margin-right: 4px; }
+
+    /* ── How It Works ── */
+    #how-it-works { padding: 80px 0; background: #fff; }
+    .step-card {
+      background: var(--light-bg);
+      border-radius: 16px;
+      padding: 2rem;
+      height: 100%;
+      text-align: center;
+      position: relative;
+      border: 1px solid #eef0f8;
+      transition: all 0.35s;
+    }
+    .step-card:hover {
+      background: #fff;
+      box-shadow: 0 15px 40px rgba(26,60,110,0.08);
+      transform: translateY(-4px);
+    }
+    .step-number-circle {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin: 0 auto 1.2rem;
+    }
+    .step-card h5 { font-size: 1.05rem; font-weight: 600; color: var(--dark); margin-bottom: 0.6rem; }
+    .step-card p { font-size: 0.87rem; color: var(--text-muted-custom); line-height: 1.75; margin: 0; }
+    .whatsapp-step {
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      border-color: #a5d6a7;
+    }
+    .whatsapp-step .step-number-circle {
+      background: #25d366;
+    }
+
+    /* ── Stats ── */
+    .stats-section {
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+      padding: 60px 0;
+    }
+    .stats-section .stat-item {
+      text-align: center;
+      color: #fff;
+    }
+    .stats-section .stat-item .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stats-section .stat-item .label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── Floating WhatsApp Button ── */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+      z-index: 9999;
+      transition: all 0.3s;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+    .float-whatsapp:hover {
+      background: #128c7e;
+      color: #fff;
+      transform: scale(1.1);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 0 30px;
+    }
+    footer .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+    }
+    footer .brand span { color: var(--accent); }
+    footer h6 { color: #fff; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.82rem; margin-bottom: 1rem; }
+    footer a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; display: block; margin-bottom: 8px; }
+    footer a:hover { color: var(--accent); }
+    .social-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7) !important;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      margin-right: 8px;
+    }
+    .social-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff !important; transform: translateY(-3px); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+      padding-top: 24px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .back-to-top {
+      width: 44px; height: 44px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+    .back-to-top:hover { background: #c8891a; transform: translateY(-3px); }
+
+    /* ── Animations ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 991px) {
+      .filter-bar { flex-direction: column; align-items: stretch; }
+      .filter-bar .filter-group { width: 100%; }
+      .filter-bar .form-select, .filter-bar .form-control { width: 100%; }
+      .whatsapp-banner { text-align: center; }
+      .whatsapp-banner .btn-whatsapp { margin-top: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">COMPANY<span>Name</span></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="index.html#services" role="button" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.html#services">Web Development</a></li>
+            <li><a class="dropdown-item" href="index.html#services">Mobile App Development</a></li>
+            <li><a class="dropdown-item" href="index.html#services">ERP Development</a></li>
+            <li><a class="dropdown-item" href="index.html#services">Design UI &amp; UX</a></li>
+            <li><a class="dropdown-item" href="index.html#services">CRM Development</a></li>
+            <li><a class="dropdown-item" href="index.html#services">Digital Marketing</a></li>
+            <li><a class="dropdown-item" href="index.html#services">Finance Domain</a></li>
+            <li><a class="dropdown-item" href="index.html#services">Bank Application Domain</a></li>
+            <li><a class="dropdown-item" href="index.html#services">Health Care Domain</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="placement-calls.html">Placement Calls</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ PAGE HEADER ══════════════ -->
+<section class="page-header">
+  <div class="container position-relative" style="z-index:2">
+    <div class="breadcrumb-nav mb-3">
+      <a href="index.html">Home</a>
+      <span class="mx-2">/</span>
+      <span style="color:var(--accent);font-size:0.85rem;">Placement Calls</span>
+    </div>
+    <h1>IT Placement Calls</h1>
+    <p class="mb-0">Exclusive IT job openings and campus drives. Get premium placement alerts directly on WhatsApp — apply instantly and never miss an opportunity.</p>
+  </div>
+</section>
+
+<!-- ══════════════ WHATSAPP CTA BANNER ══════════════ -->
+<section class="whatsapp-banner">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h3><i class="bi bi-whatsapp me-2"></i>Get Premium Placement Calls on WhatsApp</h3>
+        <p class="mb-0">Message us your name, qualification & preferred domain. We send curated IT job openings, walk-in drives, and interview calls directly to your WhatsApp — completely free.</p>
+        <p class="whatsapp-number"><i class="bi bi-telephone-fill me-1"></i> +91 88888 88888</p>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <a href="https://wa.me/918888888888?text=Hi%2C%20I%20am%20interested%20in%20IT%20placement%20calls.%20My%20name%20is%20[Your%20Name]%20and%20I%20am%20a%20[Your%20Qualification]%20graduate%20looking%20for%20opportunities%20in%20[Your%20Domain]." 
+           class="btn-whatsapp" target="_blank">
+          <i class="bi bi-whatsapp"></i> Message on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ STATS BAR ══════════════ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <div class="number">24</div>
+          <div class="label">Active IT Calls</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <div class="number">156</div>
+          <div class="label">Positions Open</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <div class="number">8</div>
+          <div class="label">Upcoming Drives</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <div class="number">2.4K</div>
+          <div class="label">WhatsApp Subscribers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ACTIVE PLACEMENT CALLS ══════════════ -->
+<section id="active-calls" style="padding: 80px 0; background: #fff;">
+  <div class="container">
+    <div class="text-center mb-4 fade-up">
+      <span class="section-subtitle">Current Openings</span>
+      <h2 class="section-title">Active IT Placement Calls</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar fade-up">
+      <div class="filter-group">
+        <label><i class="bi bi-funnel-fill me-1"></i> Filter by:</label>
+      </div>
+      <div class="filter-group">
+        <label>Domain</label>
+        <select class="form-select" id="filterDomain">
+          <option value="all">All Domains</option>
+          <option value="web">Web Development</option>
+          <option value="mobile">Mobile App Development</option>
+          <option value="erp">ERP Development</option>
+          <option value="uiux">UI / UX Design</option>
+          <option value="crm">CRM Development</option>
+          <option value="digital">Digital Marketing</option>
+          <option value="finance">Finance Domain</option>
+          <option value="banking">Banking Domain</option>
+          <option value="healthcare">Healthcare Domain</option>
+          <option value="data">Data Science / AI</option>
+          <option value="testing">Software Testing</option>
+          <option value="devops">DevOps / Cloud</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Experience</label>
+        <select class="form-select" id="filterExp">
+          <option value="all">All Levels</option>
+          <option value="fresher">Fresher</option>
+          <option value="1-2">1-2 Years</option>
+          <option value="3-5">3-5 Years</option>
+          <option value="5+">5+ Years</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Location</label>
+        <select class="form-select" id="filterLocation">
+          <option value="all">All Locations</option>
+          <option value="pune">Pune</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="bangalore">Bangalore</option>
+          <option value="hyderabad">Hyderabad</option>
+          <option value="chennai">Chennai</option>
+          <option value="remote">Remote</option>
+        </select>
+      </div>
+      <div class="filter-group ms-auto">
+        <button class="btn-filter" onclick="applyFilters()"><i class="bi bi-search me-1"></i> Search</button>
+        <button class="btn-reset" onclick="resetFilters()"><i class="bi bi-x-lg me-1"></i> Reset</button>
+      </div>
+    </div>
+
+    <!-- Call Cards Grid -->
+    <div class="row g-4" id="callsGrid">
+
+      <!-- Call 1 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="web" data-exp="fresher" data-location="pune">
+        <div class="call-card">
+          <div class="premium-badge"><i class="bi bi-star-fill me-1"></i>Premium</div>
+          <div class="card-header">
+            <h5><i class="bi bi-code-slash me-2"></i>Junior Web Developer</h5>
+            <span class="company-badge">TCS</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Pune, Maharashtra</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 4.5 - 6 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> Fresher (0-1 Years)</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 31 July 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 15 Positions</span></div>
+            <div class="tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20Junior%20Web%20Developer%20at%20TCS.%20My%20name%20is%20[Your%20Name]%20and%20I%20am%20a%20[Your%20Qualification]%20graduate." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call 2 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="mobile" data-exp="fresher" data-location="bangalore">
+        <div class="call-card">
+          <div class="premium-badge"><i class="bi bi-star-fill me-1"></i>Premium</div>
+          <div class="card-header">
+            <h5><i class="bi bi-phone me-2"></i>Mobile App Developer</h5>
+            <span class="company-badge">Infosys</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Bangalore, Karnataka</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 5 - 7 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> Fresher (0-1 Years)</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 28 July 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 10 Positions</span></div>
+            <div class="tags">
+              <span class="tag">Android</span>
+              <span class="tag">iOS</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Kotlin</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20Mobile%20App%20Developer%20at%20Infosys.%20My%20name%20is%20[Your%20Name]%20and%20I%20am%20a%20[Your%20Qualification]%20graduate." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call 3 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="data" data-exp="1-2" data-location="hyderabad">
+        <div class="call-card">
+          <div class="card-header">
+            <h5><i class="bi bi-cpu me-2"></i>Data Analyst</h5>
+            <span class="company-badge">Wipro</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Hyderabad, Telangana</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 6 - 9 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> 1-2 Years</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 25 July 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 8 Positions</span></div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Machine Learning</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20Data%20Analyst%20at%20Wipro.%20My%20name%20is%20[Your%20Name]%20and%20I%20have%20[Your%20Experience]%20years%20of%20experience." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call 4 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="uiux" data-exp="fresher" data-location="remote">
+        <div class="call-card">
+          <div class="premium-badge"><i class="bi bi-star-fill me-1"></i>Premium</div>
+          <div class="card-header">
+            <h5><i class="bi bi-palette me-2"></i>UI/UX Designer</h5>
+            <span class="company-badge">Accenture</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Remote / Pune</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 4 - 6 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> Fresher (0-1 Years)</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 30 July 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 6 Positions</span></div>
+            <div class="tags">
+              <span class="tag">Figma</span>
+              <span class="tag">Adobe XD</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">Wireframing</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20UI/UX%20Designer%20at%20Accenture.%20My%20name%20is%20[Your%20Name]%20and%20I%20am%20a%20[Your%20Qualification]%20graduate." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call 5 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="erp" data-exp="3-5" data-location="mumbai">
+        <div class="call-card">
+          <div class="card-header">
+            <h5><i class="bi bi-diagram-3 me-2"></i>ERP Consultant</h5>
+            <span class="company-badge">Capgemini</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Mumbai, Maharashtra</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 10 - 15 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> 3-5 Years</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 20 July 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 4 Positions</span></div>
+            <div class="tags">
+              <span class="tag">SAP</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">Business Analysis</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20ERP%20Consultant%20at%20Capgemini.%20My%20name%20is%20[Your%20Name]%20and%20I%20have%20[Your%20Experience]%20years%20of%20experience." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call 6 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="finance" data-exp="fresher" data-location="pune">
+        <div class="call-card">
+          <div class="premium-badge"><i class="bi bi-star-fill me-1"></i>Premium</div>
+          <div class="card-header">
+            <h5><i class="bi bi-bank me-2"></i>Financial Analyst</h5>
+            <span class="company-badge">HDFC Bank</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Pune, Maharashtra</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 5 - 8 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> Fresher (0-1 Years)</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 15 August 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 12 Positions</span></div>
+            <div class="tags">
+              <span class="tag">Financial Modeling</span>
+              <span class="tag">Excel</span>
+              <span class="tag">Risk Analysis</span>
+              <span class="tag">Reporting</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20Financial%20Analyst%20at%20HDFC%20Bank.%20My%20name%20is%20[Your%20Name]%20and%20I%20am%20a%20[Your%20Qualification]%20graduate." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call 7 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="crm" data-exp="1-2" data-location="bangalore">
+        <div class="call-card">
+          <div class="card-header">
+            <h5><i class="bi bi-people me-2"></i>CRM Developer</h5>
+            <span class="company-badge">Salesforce</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Bangalore, Karnataka</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 7 - 10 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> 1-2 Years</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 22 July 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 5 Positions</span></div>
+            <div class="tags">
+              <span class="tag">Salesforce</span>
+              <span class="tag">Apex</span>
+              <span class="tag">Lightning</span>
+              <span class="tag">Integration</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20CRM%20Developer%20at%20Salesforce.%20My%20name%20is%20[Your%20Name]%20and%20I%20have%20[Your%20Experience]%20years%20of%20experience." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call 8 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="healthcare" data-exp="fresher" data-location="pune">
+        <div class="call-card">
+          <div class="premium-badge"><i class="bi bi-star-fill me-1"></i>Premium</div>
+          <div class="card-header">
+            <h5><i class="bi bi-heart-pulse me-2"></i>Healthcare IT Specialist</h5>
+            <span class="company-badge">Cognizant</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Pune, Maharashtra</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 4.5 - 6.5 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> Fresher (0-1 Years)</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 18 July 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 8 Positions</span></div>
+            <div class="tags">
+              <span class="tag">HL7</span>
+              <span class="tag">FHIR</span>
+              <span class="tag">HIPAA</span>
+              <span class="tag">Java</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20Healthcare%20IT%20Specialist%20at%20Cognizant.%20My%20name%20is%20[Your%20Name]%20and%20I%20am%20a%20[Your%20Qualification]%20graduate." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call 9 -->
+      <div class="col-md-6 col-lg-4 fade-up call-card-wrapper" data-domain="testing" data-exp="fresher" data-location="chennai">
+        <div class="call-card">
+          <div class="card-header">
+            <h5><i class="bi bi-bug me-2"></i>Software Tester</h5>
+            <span class="company-badge">HCL Tech</span>
+          </div>
+          <div class="card-body">
+            <div class="detail-row"><i class="bi bi-geo-alt"></i><span><strong>Location:</strong> Chennai, Tamil Nadu</span></div>
+            <div class="detail-row"><i class="bi bi-cash-stack"></i><span><strong>Package:</strong> 3.5 - 5 LPA</span></div>
+            <div class="detail-row"><i class="bi bi-briefcase"></i><span><strong>Experience:</strong> Fresher (0-1 Years)</span></div>
+            <div class="detail-row"><i class="bi bi-calendar-event"></i><span><strong>Last Date:</strong> 25 July 2026</span></div>
+            <div class="detail-row"><i class="bi bi-people"></i><span><strong>Vacancies:</strong> 20 Positions</span></div>
+            <div class="tags">
+              <span class="tag">Manual Testing</span>
+              <span class="tag">Selenium</span>
+              <span class="tag">JIRA</span>
+              <span class="tag">API Testing</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="status-badge status-open">Open</span>
+            <a href="https://wa.me/918888888888?text=Hi%2C%20I%20want%20to%20apply%20for%20Software%20Tester%20at%20HCL%20Tech.%20My%20name%20is%20[Your%20Name]%20and%20I%20am%20a%20[Your%20Qualification]%20graduate." 
+               class="btn-apply" target="_blank">Apply via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ UPCOMING DRIVES ══════════════ -->
+<section id="upcoming">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-subtitle">Mark Your Calendar</span>
+      <h2 class="section-title">Upcoming IT Campus Drives</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 fade-up">
+        <div class="drive-card">
+          <div class="drive-date">
+            <span class="day">28</span>
+            <span class="month">Jul</span>
+          </div>
+          <div class="drive-info">
+            <h5>Microsoft Campus Drive</h5>
+            <p>Software Engineer roles for B.Tech / MCA freshers. Aptitude test followed by technical and HR interviews.</p>
+            <div class="meta">
+              <span><i class="bi bi-geo-alt"></i> Pune</span>
+              <span><i class="bi bi-clock"></i> 9:00 AM</span>
+              <span><i class="bi bi-people"></i> 50+ Vacancies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 fade-up">
+        <div class="drive-card">
+          <div class="drive-date">
+            <span class="day">02</span>
+            <span class="month">Aug</span>
+          </div>
+          <div class="drive-info">
+            <h5>Amazon Recruitment Drive</h5>
+            <p>SDE roles for CS/IT graduates. Coding assessment on HackerRank followed by 2 technical rounds.</p>
+            <div class="meta">
+              <span><i class="bi bi-geo-alt"></i> Bangalore</span>
+              <span><i class="bi bi-clock"></i> 10:00 AM</span>
+              <span><i class="bi bi-people"></i> 30+ Vacancies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 fade-up">
+        <div class="drive-card">
+          <div class="drive-date">
+            <span class="day">08</span>
+            <span class="month">Aug</span>
+          </div>
+          <div class="drive-info">
+            <h5>IBM Freshers Hiring</h5>
+            <p>Associate System Engineer positions. Online test, group discussion, and personal interview.</p>
+            <div class="meta">
+              <span><i class="bi bi-geo-alt"></i> Hyderabad</span>
+              <span><i class="bi bi-clock"></i> 9:30 AM</span>
+              <span><i class="bi bi-people"></i> 40+ Vacancies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 fade-up">
+        <div class="drive-card">
+          <div class="drive-date">
+            <span class="day">15</span>
+            <span class="month">Aug</span>
+          </div>
+          <div class="drive-info">
+            <h5>Tech Mahindra Mega Drive</h5>
+            <p>Multiple roles in Web, Mobile, and Testing domains. Walk-in interviews with on-spot offers.</p>
+            <div class="meta">
+              <span><i class="bi bi-geo-alt"></i> Mumbai</span>
+              <span><i class="bi bi-clock"></i> 10:00 AM</span>
+              <span><i class="bi bi-people"></i> 100+ Vacancies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ HOW IT WORKS ══════════════ -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-subtitle">Simple Process</span>
+      <h2 class="section-title">How It Works</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="step-card">
+          <div class="step-number-circle">1</div>
+          <h5>Message on WhatsApp</h5>
+          <p>Send "Hi" with your name, qualification, and preferred IT domain to our WhatsApp number.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="step-card whatsapp-step">
+          <div class="step-number-circle"><i class="bi bi-whatsapp"></i></div>
+          <h5>Get Premium Alerts</h5>
+          <p>Receive curated IT job openings, walk-in drives, and interview calls directly on WhatsApp.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="step-card">
+          <div class="step-number-circle">3</div>
+          <h5>Apply Instantly</h5>
+          <p>Reply to any call with your details. We forward your profile to the hiring company immediately.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="step-card">
+          <div class="step-number-circle">4</div>
+          <h5>Get Placed</h5>
+          <p>Attend interviews, receive offer letters, and start your IT career with top companies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="brand mb-3">COMPANY<span>NAME</span></div>
+        <p style="font-size:0.88rem;line-height:1.8;max-width:320px">A web/app development agency focused on challenging the boundaries of user-centered design by creating bespoke mobility solutions.</p>
+        <div class="mt-3">
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2 offset-lg-1">
+        <h6>Quick Links</h6>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="placement-calls.html">Placement Calls</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h6>Services</h6>
+        <a href="index.html#services">Web Development</a>
+        <a href="index.html#services">Mobile App Development</a>
+        <a href="index.html#services">ERP Development</a>
+        <a href="index.html#services">CRM Development</a>
+        <a href="index.html#services">Digital Marketing</a>
+        <a href="index.html#services">UI &amp; UX Design</a>
+      </div>
+      <div class="col-lg-2">
+        <h6>Contact</h6>
+        <p style="font-size:0.85rem;line-height:1.7">Krishnai Plaza, KarveNagar, Pune 411052</p>
+        <p style="font-size:0.85rem">+91 88888 88888</p>
+        <p style="font-size:0.85rem">info@company.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <p class="mb-0">&copy; 2025 <strong style="color:rgba(255,255,255,0.7)">COMPANY</strong>. All Rights Reserved.</p>
+      <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+        <i class="bi bi-chevron-up"></i>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ FLOATING WHATSAPP BUTTON ══════════════ -->
+<a href="https://wa.me/918888888888?text=Hi%2C%20I%20am%20interested%20in%20IT%20placement%20calls.%20My%20name%20is%20[Your%20Name]%20and%20I%20am%20a%20[Your%20Qualification]%20graduate%20looking%20for%20opportunities%20in%20[Your%20Domain]." 
+   class="float-whatsapp" target="_blank" title="Get Placement Calls on WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Intersection Observer for fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Filter functionality
+  function applyFilters() {
+    const domain = document.getElementById('filterDomain').value;
+    const exp = document.getElementById('filterExp').value;
+    const location = document.getElementById('filterLocation').value;
+    const cards = document.querySelectorAll('.call-card-wrapper');
+
+    cards.forEach(card => {
+      const cardDomain = card.dataset.domain;
+      const cardExp = card.dataset.exp;
+      const cardLocation = card.dataset.location;
+
+      const matchDomain = domain === 'all' || cardDomain === domain;
+      const matchExp = exp === 'all' || cardExp === exp;
+      const matchLocation = location === 'all' || cardLocation === location;
+
+      if (matchDomain && matchExp && matchLocation) {
+        card.style.display = 'block';
+        setTimeout(() => card.style.opacity = '1', 10);
+      } else {
+        card.style.opacity = '0';
+        setTimeout(() => card.style.display = 'none', 300);
+      }
+    });
+  }
+
+  function resetFilters() {
+    document.getElementById('filterDomain').value = 'all';
+    document.getElementById('filterExp').value = 'all';
+    document.getElementById('filterLocation').value = 'all';
+    const cards = document.querySelectorAll('.call-card-wrapper');
+    cards.forEach(card => {
+      card.style.display = 'block';
+      setTimeout(() => card.style.opacity = '1', 10);
+    });
+  }
+
+  // Smooth active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/placement-calls.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("File saved successfully!")
+print(f"File size: {len(html_content)} characters")
